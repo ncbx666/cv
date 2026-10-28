@@ -1,7 +1,8 @@
 # Распознавание автомобильных номеров (ANPR)
 
 Ноутбук для Google Colab: поиск номерных знаков на изображениях с помощью
-YOLOv9 и чтение текста номера через EasyOCR.
+YOLOv9. Чтение номера через EasyOCR задумано, но пока не сделано: пакет
+устанавливается, а распознавание текста в ноутбуке не вызывается.
 
 - Ноутбук: [`Automatic_number_plate_recognition_(ANPR)_with_Yolov9_and_EasyOCR.ipynb`](Automatic_number_plate_recognition_(ANPR)_with_Yolov9_and_EasyOCR.ipynb)
   (кнопка «Open in Colab» в первой ячейке)
@@ -15,8 +16,7 @@ YOLOv9 и чтение текста номера через EasyOCR.
 2. Датасет загружается из Roboflow; при запуске `roboflow.login()` попросит
    войти в аккаунт Roboflow.
 3. YOLOv9 дообучается на номерных знаках.
-4. Найденные рамки вырезаются и передаются в EasyOCR, который возвращает текст
-   номера.
+4. Обученная модель (`detect.py`) находит номера на тестовых изображениях.
 
 Нужен GPU: в Colab выберите `Runtime → Change runtime type → GPU`.
 
